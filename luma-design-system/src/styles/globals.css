@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors - Inferred from common design patterns */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --card-border-radius: 0.5rem;
+    --card-hover-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary - Brand color */
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-bg-color: hsl(210, 40%, 96.1%);
+    --secondary-color-alpha: hsl(222.2, 47.4%, 11.2%, 0.7);
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Brand colors */
+    --brand-color: 262.1 83.3% 57.8%;
+    --brand-active-color: 262.1 83.3% 65%;
+
+    /* Semantic colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success-color: 142.1 76.2% 36.3%;
+    --success-faint-bg-color: 142.1 76.2% 96%;
+    --success-pale-bg-color: 142.1 76.2% 90%;
+
+    --error-color: 0 84.2% 60.2%;
+    --error-faint-bg-color: 0 84.2% 96%;
+    --error-pale-bg-color: 0 84.2% 90%;
+
+    --warning-color: 38 92% 50%;
+    --warning-faint-bg-color: 38 92% 96%;
+    --warning-pale-bg-color: 38 92% 90%;
+
+    /* UI elements */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262.1 83.3% 57.8%;
+
+    --divider-color: hsl(214.3, 31.8%, 91.4%);
+    --input-focus-border-color: hsl(262.1, 83.3%, 57.8%);
+    --input-focus-box-shadow: 0 0 0 3px hsl(262.1, 83.3%, 57.8%, 0.1);
+    --input-focus-bg-color: hsl(0, 0%, 100%);
+
+    --placeholder-color: hsl(215.4, 16.3%, 46.9%);
+    --disabled-background-color: hsl(210, 40%, 96.1%);
+    --light-button-color: hsl(262.1, 83.3%, 57.8%);
+
+    /* Banner colors */
+    --banner-color: hsl(217.2, 91.2%, 59.8%);
+    --banner-bg-color: hsl(217.2, 91.2%, 96%);
+    --banner-border-color: hsl(217.2, 91.2%, 85%);
+
+    /* Typography */
+    --font-weight-medium: 500;
+
+    /* Transitions */
+    --transition: all 0.2s ease-in-out;
+
+    /* Input dimensions */
+    --input-height: 2.5rem;
+    --input-padding: 0.5rem 0.75rem;
+
+    /* Modal */
+    --modal-horizontal-padding: 1.5rem;
+
+    /* Slider track */
+    --track-left-color: hsl(262.1, 83.3%, 57.8%);
+    --track-right-color: hsl(214.3, 31.8%, 91.4%);
+
+    /* Border radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --card-hover-shadow: 0 4px 6px -1px rgb(255 255 255 / 0.1), 0 2px 4px -2px rgb(255 255 255 / 0.05);
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-bg-color: hsl(217.2, 32.6%, 17.5%);
+    --secondary-color-alpha: hsl(210, 40%, 98%, 0.7);
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success-color: 142.1 70.6% 45.3%;
+    --success-faint-bg-color: 142.1 76.2% 12%;
+    --success-pale-bg-color: 142.1 76.2% 18%;
+
+    --error-color: 0 72.2% 50.6%;
+    --error-faint-bg-color: 0 84.2% 12%;
+    --error-pale-bg-color: 0 84.2% 18%;
+
+    --warning-color: 38 92% 60%;
+    --warning-faint-bg-color: 38 92% 12%;
+    --warning-pale-bg-color: 38 92% 18%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262.1 83.3% 57.8%;
+
+    --divider-color: hsl(217.2, 32.6%, 17.5%);
+    --input-focus-bg-color: hsl(222.2, 84%, 4.9%);
+    --disabled-background-color: hsl(217.2, 32.6%, 17.5%);
+    --banner-bg-color: hsl(217.2, 91.2%, 12%);
+    --banner-border-color: hsl(217.2, 91.2%, 25%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Luma-specific utilities */
+@layer utilities {
+  .user-select-none {
+    user-select: none;
+  }
+
+  @media (hover: hover) {
+    .hover-capable:hover {
+      box-shadow: var(--card-hover-shadow);
+    }
+  }
+}
