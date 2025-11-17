@@ -1,4 +1,4 @@
-import { lumaTokens } from './src/tokens'
+import { lumaTokens } from './src/tokens/index'
 
 /** @type {import('tailwindcss').Config} */
 export default {
