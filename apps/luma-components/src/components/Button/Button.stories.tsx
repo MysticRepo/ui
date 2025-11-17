@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import React from 'react'
 import { Button } from './Button'
 
 /**
@@ -58,9 +59,30 @@ export const Primary: Story = {
     variant: 'solid',
     size: 'md',
   },
+  render: (args) => {
+    console.log('[Button Story] Primary story rendering with args:', args)
+    console.log('[Button Story] Button component:', Button)
+    
+    React.useEffect(() => {
+      console.log('[Button Story] Primary story mounted')
+      return () => {
+        console.log('[Button Story] Primary story unmounting')
+      }
+    }, [])
+    
+    try {
+      const result = <Button {...args} />
+      console.log('[Button Story] Button element created successfully')
+      return result
+    } catch (error) {
+      console.error('[Button Story] Error creating Button:', error)
+      return <div style={{ color: 'red' }}>Error: {String(error)}</div>
+    }
+  },
 }
 
 export const AllColors: Story = {
+  args: { children: 'Button' },
   render: () => (
     <div className="flex flex-wrap gap-4">
       {[
@@ -89,6 +111,7 @@ export const AllColors: Story = {
 }
 
 export const AllSizes: Story = {
+  args: { children: 'Button' },
   render: () => (
     <div className="flex flex-wrap items-end gap-4">
       {['xs', 'sm', 'md', 'lg', 'xl', '2xl'].map((size) => (
@@ -101,6 +124,7 @@ export const AllSizes: Story = {
 }
 
 export const Variants: Story = {
+  args: { children: 'Button' },
   render: () => (
     <div className="flex flex-col gap-6">
       <div className="flex flex-wrap gap-4">
@@ -136,6 +160,7 @@ export const Variants: Story = {
 }
 
 export const WithIcons: Story = {
+  args: { children: 'Button' },
   render: () => (
     <div className="flex flex-wrap gap-4">
       <Button leftIcon={<span>←</span>}>Back</Button>
@@ -148,6 +173,7 @@ export const WithIcons: Story = {
 }
 
 export const Loading: Story = {
+  args: { children: 'Button' },
   render: () => (
     <div className="flex flex-wrap gap-4">
       <Button loading>Loading</Button>
@@ -162,6 +188,7 @@ export const Loading: Story = {
 }
 
 export const Disabled: Story = {
+  args: { children: 'Button' },
   render: () => (
     <div className="flex flex-wrap gap-4">
       <Button disabled>Disabled</Button>
@@ -176,6 +203,7 @@ export const Disabled: Story = {
 }
 
 export const FullWidth: Story = {
+  args: { children: 'Button' },
   render: () => (
     <div className="flex flex-col gap-4 max-w-md">
       <Button fullWidth>Full Width Button</Button>
@@ -190,6 +218,7 @@ export const FullWidth: Story = {
  * Complete color matrix - All 15 colors in 6 sizes (matching Luma)
  */
 export const CompleteColorMatrix: Story = {
+  args: { children: 'Button' },
   render: () => {
     const colors = [
       'primary',

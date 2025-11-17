@@ -16,7 +16,6 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    label: 'Quantity',
     defaultValue: 1,
     min: 0,
     max: 100,
@@ -25,7 +24,6 @@ export const Default: Story = {
 
 export const WithInitialValue: Story = {
   args: {
-    label: 'Number of guests',
     defaultValue: 2,
     min: 1,
     max: 10,
@@ -33,22 +31,23 @@ export const WithInitialValue: Story = {
 }
 
 export const AllSizes: Story = {
+  args: {},
   render: () => (
     <div className="flex flex-col gap-6">
-      <CountSelector label="Small" size="sm" defaultValue={1} min={0} max={10} />
-      <CountSelector label="Medium" size="md" defaultValue={1} min={0} max={10} />
-      <CountSelector label="Large" size="lg" defaultValue={1} min={0} max={10} />
+      <CountSelector size="sm" defaultValue={1} min={0} max={10} />
+      <CountSelector size="md" defaultValue={1} min={0} max={10} />
+      <CountSelector size="lg" defaultValue={1} min={0} max={10} />
     </div>
   ),
 }
 
 export const Controlled: Story = {
+  args: {},
   render: () => {
     const [value, setValue] = React.useState(5)
     return (
       <div className="flex flex-col gap-4">
         <CountSelector
-          label="Tickets"
           value={value}
           onChange={setValue}
           min={1}
@@ -62,7 +61,6 @@ export const Controlled: Story = {
 
 export const WithStep: Story = {
   args: {
-    label: 'Count by 5s',
     defaultValue: 10,
     min: 0,
     max: 100,
@@ -72,17 +70,14 @@ export const WithStep: Story = {
 
 export const WithError: Story = {
   args: {
-    label: 'Count with error',
     defaultValue: 1,
     min: 0,
     max: 10,
-    error: 'This field is required',
   },
 }
 
 export const Disabled: Story = {
   args: {
-    label: 'Disabled',
     defaultValue: 5,
     min: 0,
     max: 10,

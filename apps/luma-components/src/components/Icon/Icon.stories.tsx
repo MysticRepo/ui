@@ -22,6 +22,7 @@ export const Default: Story = {
 }
 
 export const AllSizes: Story = {
+  args: { name: 'Star' },
   render: () => (
     <div className="flex items-end gap-4">
       <Icon name="Star" size={16} />
@@ -33,6 +34,7 @@ export const AllSizes: Story = {
 }
 
 export const AllVariants: Story = {
+  args: { name: 'Heart' },
   render: () => (
     <div className="flex items-center gap-6">
       <div className="flex flex-col items-center gap-2">
@@ -52,6 +54,7 @@ export const AllVariants: Story = {
 }
 
 export const WithColors: Story = {
+  args: { name: 'CheckCircle' },
   render: () => (
     <div className="flex gap-4">
       <Icon name="CheckCircle" size={32} className="text-green-600" />
@@ -63,6 +66,7 @@ export const WithColors: Story = {
 }
 
 export const CoreUIIcons: Story = {
+  args: { name: 'Home' },
   render: () => {
     const coreIcons: IconName[] = [
       'Home', 'Search', 'Bell', 'User', 'Users', 'Settings',
@@ -85,6 +89,7 @@ export const CoreUIIcons: Story = {
 }
 
 export const NavigationIcons: Story = {
+  args: { name: 'ChevronUp' },
   render: () => {
     const navIcons: IconName[] = [
       'ChevronUp', 'ChevronDown', 'ChevronLeft', 'ChevronRight',
@@ -105,6 +110,7 @@ export const NavigationIcons: Story = {
 }
 
 export const StatusIcons: Story = {
+  args: { name: 'CheckCircle' },
   render: () => {
     const statusIcons: IconName[] = [
       'CheckCircle', 'XCircle', 'AlertCircle', 'AlertTriangle',
@@ -125,6 +131,7 @@ export const StatusIcons: Story = {
 }
 
 export const WeatherIcons: Story = {
+  args: { name: 'Sun' },
   render: () => {
     const weatherIcons: IconName[] = [
       'Sun', 'Cloud', 'Rain', 'Snow', 'Wind', 'Thunderstorm', 'ClearNight',
@@ -144,6 +151,7 @@ export const WeatherIcons: Story = {
 }
 
 export const BrandIcons: Story = {
+  args: { name: 'Apple' },
   render: () => {
     const brandIcons: IconName[] = [
       'Apple', 'Google', 'GitHub', 'Discord', 'Stripe',
@@ -164,6 +172,7 @@ export const BrandIcons: Story = {
 }
 
 export const FileIcons: Story = {
+  args: { name: 'File' },
   render: () => {
     const fileIcons: IconName[] = [
       'File', 'FileText', 'Folder', 'Image', 'Download', 'Upload',
@@ -183,6 +192,7 @@ export const FileIcons: Story = {
 }
 
 export const MediaIcons: Story = {
+  args: { name: 'Play' },
   render: () => {
     const mediaIcons: IconName[] = [
       'Play', 'Pause', 'Stop', 'Video', 'Maximize', 'Minimize', 'Refresh',
@@ -202,6 +212,7 @@ export const MediaIcons: Story = {
 }
 
 export const CommunicationIcons: Story = {
+  args: { name: 'Chat' },
   render: () => {
     const commIcons: IconName[] = [
       'Chat', 'MessageCircle', 'Mail', 'Phone', 'Send', 'Share',
@@ -221,6 +232,7 @@ export const CommunicationIcons: Story = {
 }
 
 export const ActivityIcons: Story = {
+  args: { name: 'Running' },
   render: () => {
     const activityIcons: IconName[] = [
       'Running', 'Trophy', 'Target', 'Flag',
@@ -240,6 +252,7 @@ export const ActivityIcons: Story = {
 }
 
 export const AllIcons: Story = {
+  args: { name: 'Home' },
   render: () => {
     const allIconNames = Object.keys(icons) as IconName[]
 
@@ -266,6 +279,7 @@ export const AllIcons: Story = {
 }
 
 export const InButtons: Story = {
+  args: { name: 'Plus' },
   render: () => (
     <div className="flex gap-4">
       <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">

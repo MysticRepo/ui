@@ -282,13 +282,35 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    return (
+    console.log('[Button Component] Rendering Button with props:', {
+      variant,
+      color,
+      size,
+      fullWidth,
+      loading,
+      disabled,
+      hasChildren: !!children,
+      className,
+    })
+    
+    React.useEffect(() => {
+      console.log('[Button Component] Button mounted in DOM')
+      return () => {
+        console.log('[Button Component] Button unmounting from DOM')
+      }
+    }, [])
+    
+    try {
+      const buttonClasses = cn(
+        buttonVariants({ variant, color: color as any, size, fullWidth, loading }),
+        className
+      )
+      console.log('[Button Component] Computed button classes:', buttonClasses)
+      
+      return (
       <button
         ref={ref}
-        className={cn(
-          buttonVariants({ variant, color: color as any, size, fullWidth, loading }),
-          className
-        )}
+        className={buttonClasses}
         disabled={disabled || loading}
         {...props}
       >
@@ -320,7 +342,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
         {rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
       </button>
-    )
+      )
+    } catch (error) {
+      console.error('[Button Component] Error rendering Button:', error)
+      return (
+        <button ref={ref} disabled style={{ color: 'red', border: '2px solid red', padding: '8px' }}>
+          Error: {String(error)}
+        </button>
+      )
+    }
   }
 )
 
